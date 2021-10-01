@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//images1-focus-opensocial.googleusercontent.com" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msvalidate.01" content="B6D9E425AAE23BA79E416B61AC1E5A01">
+    <meta name="yandex-verification" content="4333ceef2cab3038">
+    <meta name="google-site-verification" content="rhSsSTc_qQMNMTFd_awpD5__zBNGOUKvsDk2Z-qxCu4">
+    <meta charset="UTF-8" />
+    <title>any() in Python - Check If An Iterable Contains True</title>
+    <meta name="description" content="Learn how to use the any() function in python to see if any items in an iterable object evaluate to True.💻 AlgoExpert is the co...">
+	<meta name="keywords" content="tech with tim,python,python shorts">
+    <meta property="og:site_name" content="Spritecac">
+    <meta property="og:url" content="https://spritecac.github.io/any-in-python-check-if-an-iterable-contains-true.html">
+    <meta property="og:title" content="any() in Python - Check If An Iterable Contains True">
+    <meta property="og:image" content="https://i.ytimg.com/vi/h5YiHNh8S5Y/hqdefault.jpg">
+    <meta property="og:description" content="Learn how to use the any() function in python to see if any items in an iterable object evaluate to True.💻 AlgoExpert is the co...">
+    <meta name='twitter:card' content='summary_large_image' />
+    <link rel="canonical" href="https://spritecac.github.io/any-in-python-check-if-an-iterable-contains-true.html" />
+    <script type="application/ld+json">
+      {
+        "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://spritecac.github.io/any-in-python-check-if-an-iterable-contains-true.html"
+        },
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline":"any() in Python - Check If An Iterable Contains True",
+        "keywords": "tech with tim,python,python shorts",
+        "description": "Learn how to use the any() function in python to see if any items in an iterable object evaluate to True.💻 AlgoExpert is the coding interview prep platform that I used to ace my Microsoft and Shopify interviews. Check it out and get a discount on the platform using the code &quot;techwithtim&quot; https://algoexpert.io/techwithtim 📚 Playlist: https://www.youtube.com/playlist?list=PLzMcBGfZo4-k-_nZU2GCrVKJF3Kvj7yFw◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️💰 Courses &amp;amp; Merch 💰 💻 The Fundamentals of Programming w/ Python: https://tech-with-tim.teachable.com/p/the-fundamentals-of-programming-with-python 👕 Merchandi...",
+        "url":"https://spritecac.github.io/any-in-python-check-if-an-iterable-contains-true.html",
+        "image":"https://i.ytimg.com/vi/h5YiHNh8S5Y/hqdefault.jpg",
+        "datePublished":"2021-10-01T05:00:42+00:00",
+        "dateModified":"2021-10-01T05:00:42+00:00",
+          "author":{
+            "@type":"Person",
+            "name":"Spritecac"
+          },
+         "publisher":{
+            "@type":"Organization",
+            "name":"Spritecac",
+            "url":"https://spritecac.github.io/",
+            "logo":{
+               "@type":"ImageObject",
+               "url":"https://spritecac.github.io/logo.png"
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://spritecac.github.io/inc/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar mb-3 navbar-expand-lg navbar-light bg-white mb-4 shadow-sm">
+        <div class="container py-2"><a class="navbar-brand" href="https://spritecac.github.io/">Spritecac</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-urls" aria-controls="navbar-urls" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <form
+                action="/search/" class="my-2 my-lg-0 offset-md-2 col-md-6 col-sm-12 px-0 mr-auto">
+                <div class="input-group"><input name="s" class="form-control rounded-0 py-2" type="text" placeholder="video search..." id="example-search-input"><span class="input-group-append"><button aria-label="search" role="button" class="btn btn-secondary rounded-0" type="submit"><span class="px-2"><svg class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span></button>
+                    </span>
+                </div>
+                </form>
+                <div class="collapse navbar-collapse flex-md-grow-0" id="navbar-urls">
+
+                </div>
+        </div>
+    </nav>
+    <div class="container min-height-62" >
+        <div class="resp-container" id="top_720"></div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="bg-white"><noscript><a href="https://www.youtube.com/watch?v=h5YiHNh8S5Y"><img alt="any() in Python - Check If An Iterable Contains True" src="https://i.ytimg.com/vi/h5YiHNh8S5Y/hqdefault.jpg" /></a></noscript>
+                    <div id="video-player"></div>
+                    <div class="p-3">
+                        <h1 class="h5 video-title bwr">any() in Python - Check If An Iterable Contains True</h1>
+                        <div class="py-1 row">
+                            <div class="col-12 col-md-6 my-auto"><b class="text-danger">Share this & earn $10</b></div>
+                            <div class="col-12 col-md-6">
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_whatsapp"></a></div>
+                            </div>
+                        </div>
+                        <div align="center" class="py-1">
+
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-2 bwr"><strong>Tech With Tim</strong><br> Published at : 01 Oct 2021  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="h-100 d-flex align-items-center justify-content-center"><a  target="_blank" rel="noopener" class="btn btn-block btn-danger bwr" href="https://www.youtube.com/watch?v=h5YiHNh8S5Y">Subscribe to Tech With Tim</a></div>
+                                </div>
+                            </div>
+                            <div class="resp-container" id="in_post_bottomads"></div>
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="text-center bg-light mb-2 p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg></span>                                        12853 views </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg></span>                                                1006 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"></path></svg></span>                                                10 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="py-1 d-md-block bwr" id="video-description"><p>Learn how to use the any() function in python to see if any items in an iterable object evaluate to True.<br /><br />💻 AlgoExpert is the coding interview prep platform that I used to ace my Microsoft and Shopify interviews. Check it out and get a discount on the platform using the code "techwithtim" <a rel="nofollow" target="blank" href="https://algoexpert.io/techwithtim">https://algoexpert.io/techwithtim</a> <br /><br />📚 Playlist: <a rel="nofollow" target="blank" href="https://www.youtube.com/playlist?list=PLzMcBGfZo4-k-_nZU2GCrVKJF3Kvj7yFw">https://www.youtube.com/playlist?list=PLzMcBGfZo4-k-_nZU2GCrVKJF3Kvj7yFw</a><br /><br />◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️<br />💰 Courses &amp; Merch 💰 <br />💻 The Fundamentals of Programming w/ Python: <a rel="nofollow" target="blank" href="https://tech-with-tim.teachable.com/p/the-fundamentals-of-programming-with-python">https://tech-with-tim.teachable.com/p/the-fundamentals-of-programming-with-python</a> <br />👕 Merchandise: <a rel="nofollow" target="blank" href="https://teespring.com/stores/tech-with-tim-merch-shop">https://teespring.com/stores/tech-with-tim-merch-shop</a> <br /><br />🔗 Social Medias 🔗 <br />📸 Instagram: <a rel="nofollow" target="blank" href="https://www.instagram.com/tech_with_tim">https://www.instagram.com/tech_with_tim</a> <br />📱 Twitter: <a rel="nofollow" target="blank" href="https://twitter.com/TechWithTimm">https://twitter.com/TechWithTimm</a> <br />⭐ Discord: <a rel="nofollow" target="blank" href="https://discord.gg/twt">https://discord.gg/twt</a><br />📝 LinkedIn: <a rel="nofollow" target="blank" href="https://www.linkedin.com/in/tim-ruscica-82631b179/">https://www.linkedin.com/in/tim-ruscica-82631b179/</a> <br />🌎 Website: <a rel="nofollow" target="blank" href="https://techwithtim.net">https://techwithtim.net</a> <br />📂 GitHub: <a rel="nofollow" target="blank" href="https://github.com/techwithtim">https://github.com/techwithtim</a> <br />🔊 Podcast: <a rel="nofollow" target="blank" href="https://anchor.fm/tech-with-tim">https://anchor.fm/tech-with-tim</a> <br /><br />🎬 My YouTube Gear 🎬 <br />🎥 Main Camera (EOS Canon 90D): <a rel="nofollow" target="blank" href="https://amzn.to/3cY23y9">https://amzn.to/3cY23y9</a> <br />🎥 Secondary Camera (Panasonic Lumix G7): <a rel="nofollow" target="blank" href="https://amzn.to/3fl2iEV">https://amzn.to/3fl2iEV</a> <br />📹 Main Lens (EFS 24mm f/2.8): <a rel="nofollow" target="blank" href="https://amzn.to/2Yuol5r">https://amzn.to/2Yuol5r</a> <br />🕹 Tripod: <a rel="nofollow" target="blank" href="https://amzn.to/3hpSprv">https://amzn.to/3hpSprv</a> <br />🎤 Main Microphone (Rode NT1): <a rel="nofollow" target="blank" href="https://amzn.to/2HrZxXc">https://amzn.to/2HrZxXc</a><br />🎤 Secondary Microphone (Synco Wireless Lapel System): <a rel="nofollow" target="blank" href="https://amzn.to/3e07Swl">https://amzn.to/3e07Swl</a> <br />🎤 Third Microphone (Rode NTG4+): <a rel="nofollow" target="blank" href="https://amzn.to/3oi0v8Z">https://amzn.to/3oi0v8Z</a><br />☀️ Lights: <a rel="nofollow" target="blank" href="https://amzn.to/2ApeiXr">https://amzn.to/2ApeiXr</a> <br />⌨ Keyboard (Daskeyboard 4Q): <a rel="nofollow" target="blank" href="https://amzn.to/2YpN5vm">https://amzn.to/2YpN5vm</a> <br />🖱 Mouse (Logitech MX Master): <a rel="nofollow" target="blank" href="https://amzn.to/2HsmRDN">https://amzn.to/2HsmRDN</a><br />📸 Webcam (Logitech 1080p Pro): <a rel="nofollow" target="blank" href="https://amzn.to/2B2IXcQ">https://amzn.to/2B2IXcQ</a> <br />📢 Speaker (Beats Pill): <a rel="nofollow" target="blank" href="https://amzn.to/2XYc5ef">https://amzn.to/2XYc5ef</a> <br />🎧 Headphones (Bose Quiet Comfort 35): <a rel="nofollow" target="blank" href="https://amzn.to/2MWbl3e">https://amzn.to/2MWbl3e</a> <br />🌞 Lamp (BenQ E-reading Lamp): <a rel="nofollow" target="blank" href="https://amzn.to/3e0UCr8">https://amzn.to/3e0UCr8</a> <br />🌞 Secondary Lamp (BenQ Screenbar Plus): <a rel="nofollow" target="blank" href="https://amzn.to/30Dtafi">https://amzn.to/30Dtafi</a> <br />💻 Monitor (BenQ EX2780Q): <a rel="nofollow" target="blank" href="https://amzn.to/2HsmUPZ">https://amzn.to/2HsmUPZ</a><br />💻 Monitor (LG Ultrawide 34WN750): <a rel="nofollow" target="blank" href="https://amzn.to/3dSD7tS">https://amzn.to/3dSD7tS</a><br />🎙 Mic Boom Arm (Rode PSA 1): <a rel="nofollow" target="blank" href="https://amzn.to/30EZw9m">https://amzn.to/30EZw9m</a> <br />🎚 Audio Interface (Focusrite Scarlet 4i4): <a rel="nofollow" target="blank" href="https://amzn.to/2TjXsih">https://amzn.to/2TjXsih</a><br /><br />💸 Donations 💸 <br />💵 One-Time Donations: <a rel="nofollow" target="blank" href="https://www.paypal.com/donate?hosted_button_id=CU9FV329ADNT8">https://www.paypal.com/donate?hosted_button_id=CU9FV329ADNT8</a><br />💰 Patreon: <a rel="nofollow" target="blank" href="https://www.patreon.com/techwithtim">https://www.patreon.com/techwithtim</a><br />◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️<br /><br />⭐️ Tags ⭐️<br />- any() Function<br />- Python Any<br />- any() Python<br />- any function python<br />- Python any()<br />- Python Shorts<br /><br />⭐️ Hashtags ⭐️<br />#Shorts #PythonShorts #Python</p>
+</div>
+                        <div class="d-none"><span>tech with tim</span><span>python</span><span>python shorts</span></div>
+                        <hr/>
+                        <div class="py-3"><div class="resp-container" id="extra_bottomads"><iframe data-aa="1769570" src="//ad.a-ads.com/1769570?size=468x60" style="width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;" ></iframe>
+</div></div>
+                    </div>
+                </div>
+                <div class="position-sticky fixed-top d-md-block d-none">
+                    <div align="center" class="py-2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <div class="mb-4">
+                <div class="resp-container py-3" id="sidebar_300"></div>
+            </div>
+                
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/what-mindless-scrolling-does-to-you.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/WEQTrW9NP68/mqdefault.jpg" alt="what mindless scrolling does to you">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">what mindless scrolling does to you</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/mollie-collins-ruth-royall-remedies.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/vGYJl4IZQgc/mqdefault.jpg" alt="Mollie Collins &amp; Ruth Royall - Remedies">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mollie Collins &amp; Ruth Royall - Remedies</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/guess-who-appeared-on-the-ellen-show-as-a-kid.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/WuoWlMJj6lw/mqdefault.jpg" alt="Guess Who Appeared on &#39;The Ellen Show&#39; as a Kid!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Guess Who Appeared on &#39;The Ellen Show&#39; as a Kid!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/opening-1000-of-the-worst-case-in-cs-go.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/nSVT3iKUn8g/mqdefault.jpg" alt="Opening 1000 of the WORST CASE in CS:GO...">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Opening 1000 of the WORST CASE in CS:GO...</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/best-football-skills-2021-22-7.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ZjyzevUY2EI/mqdefault.jpg" alt="Best Football Skills 2021/22 #7">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Best Football Skills 2021/22 #7</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/compilation-of-different-air-raid-sirens-10-countries-pt-2.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/iyfAGZA4y8g/mqdefault.jpg" alt="Compilation of different air raid sirens. (10 countries) Pt 2.">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Compilation of different air raid sirens. (10 countries) Pt 2.</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/for-the-time-being.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/4azZzzJNIIE/mqdefault.jpg" alt="For the Time Being">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">For the Time Being</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/like-a-boss-compilation-191-amazing-people-2021.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VGNmHJf1zQo/mqdefault.jpg" alt="LIKE A BOSS COMPILATION #191 - Amazing People 2021">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">LIKE A BOSS COMPILATION #191 - Amazing People 2021</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/a-better-way-to-hire-simon-sinek.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/TulFqmYqEJc/mqdefault.jpg" alt="A Better Way to Hire | Simon Sinek">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">A Better Way to Hire | Simon Sinek</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/anthony-hamilton-charlene-official-music-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/QUmxh7H8vok/mqdefault.jpg" alt="Anthony Hamilton - Charlene (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Anthony Hamilton - Charlene (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/impossible-to-resist.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/s2aTJKrIbas/mqdefault.jpg" alt="Impossible To Resist">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Impossible To Resist</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/learn-english-words-relatively-meaning-vocabulary-with-pictures-and-ex.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/M0STbyLlCkY/mqdefault.jpg" alt="Learn English Words: RELATIVELY - Meaning, Vocabulary with Pictures and Examples">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Learn English Words: RELATIVELY - Meaning, Vocabulary with Pictures and Examples</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/cs0jtbzd8q8.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/cS0jTbzd8Q8/mqdefault.jpg" alt="Moms">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Moms</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/local-matters-how-the-california-recall-is-impacting-state-politics.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/FYQ4ri52sqE/mqdefault.jpg" alt="Local Matters: How the California recall is impacting state politics">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Local Matters: How the California recall is impacting state politics</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/don-covay-i-was-checking-out-she-was-checking-in.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/QOu1Tc4Eu4o/mqdefault.jpg" alt="Don Covay-I Was Checking Out She Was Checking In">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Don Covay-I Was Checking Out She Was Checking In</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/the-billonaire-c-eo-daughter-only-pretend-2be-comon-cleaner-jst-2knw-w.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/DYaRWKVtQ5I/mqdefault.jpg" alt="The Billonaire C.EO Daughter Only Pretend 2Be Comon Cleaner Jst 2Knw Who Wil Truly Her Love-Nigerian">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Billonaire C.EO Daughter Only Pretend 2Be Comon Cleaner Jst 2Knw Who Wil Truly Her Love-Nigerian</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/7-key-steps-to-planning-and-launching-a-successful-marketing-campaign.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/MDeNopMCxVM/mqdefault.jpg" alt="7 Key Steps to Planning and Launching a Successful Marketing Campaign | Marketing 360®">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">7 Key Steps to Planning and Launching a Successful Marketing Campaign | Marketing 360®</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/hakuho-to-build-new-20m-stable.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8Si4an4ZLD0/mqdefault.jpg" alt="Hakuho to build new $20m stable">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Hakuho to build new $20m stable</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/magic-in-the-hamptons.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/j_muOGqgcsE/mqdefault.jpg" alt="Magic In The Hamptons">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Magic In The Hamptons</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/jamelia-superstar.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/-P2yQ5QJApo/mqdefault.jpg" alt="Jamelia - Superstar">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Jamelia - Superstar</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/nora-chris-x-drenchill-remedy-official-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oRe2x_zPBHI/mqdefault.jpg" alt="Nora &amp; Chris X Drenchill - Remedy (Official Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Nora &amp; Chris X Drenchill - Remedy (Official Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/duty-chapter-1-rwandan-best-action-film.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Xh_3r1giVak/mqdefault.jpg" alt="DUTY chapter 1, Rwandan Best action film">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">DUTY chapter 1, Rwandan Best action film</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/grade-12-humanities-english-writing-1a-an-informal-email.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/M4LBW7AGfEo/mqdefault.jpg" alt="Grade 12 Humanities   English   Writing 1a  An informal email">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Grade 12 Humanities   English   Writing 1a  An informal email</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/a-god-we-can-trust-timeless-truths-dr-charles-stanley.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8lh-ssaUblU/mqdefault.jpg" alt="A God We Can Trust | Timeless Truths – Dr. Charles Stanley">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">A God We Can Trust | Timeless Truths – Dr. Charles Stanley</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/nonstop-80s-greatest-hits-best-oldies-songs-of-1980s-greatest-80s-musi.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/c40SjIZEfcg/mqdefault.jpg" alt="Nonstop 80s Greatest Hits 🎈🎈 Best Oldies Songs Of 1980s 🎈🎈 Greatest 80s Music Hits trap13/04/2019">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Nonstop 80s Greatest Hits 🎈🎈 Best Oldies Songs Of 1980s 🎈🎈 Greatest 80s Music Hits trap13/04/2019</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/proven-review-my-honest-review-as-a-health-researcher-nutravesta-prove.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/KHHRjy92z-U/mqdefault.jpg" alt="ProVen Review 💊 MY HONEST REVIEW AS A HEALTH RESEARCHER 🔴 |NutraVesta ProVen Weight Loss Supplement|">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">ProVen Review 💊 MY HONEST REVIEW AS A HEALTH RESEARCHER 🔴 |NutraVesta ProVen Weight Loss Supplement|</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/onar-feat-pezet-bilon-equipment-prod-choina.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ITaW-qWyyk4/mqdefault.jpg" alt="ONAR feat. PEZET, BILON &quot;Equipment&quot; (prod. Choina)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">ONAR feat. PEZET, BILON &quot;Equipment&quot; (prod. Choina)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/sigma-hawk-iiwii-it-is-what-it-isn-t-official-music-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/668yyWTPYdE/mqdefault.jpg" alt="Sigma, Hawk - IIWII | It Is What It Isn&#39;t (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Sigma, Hawk - IIWII | It Is What It Isn&#39;t (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/aladdin-prince-ali-high-quality.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/aEryAoLfnAA/mqdefault.jpg" alt="Aladdin - Prince Ali [High Quality]">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Aladdin - Prince Ali [High Quality]</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/math-antics-factoring.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/0NvLtTwnUHs/mqdefault.jpg" alt="Math Antics - Factoring">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Math Antics - Factoring</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/why-britain-s-electricity-price-increased-by-3000-tldr-news.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/7Yw-s0INT4w/mqdefault.jpg" alt="Why Britain&#39;s Electricity Price Increased by 3000% - TLDR News">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Why Britain&#39;s Electricity Price Increased by 3000% - TLDR News</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/imany-you-will-never-know-clip-officiel.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/L4tF9EnbcxU/mqdefault.jpg" alt="Imany - You Will Never Know (Clip Officiel)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Imany - You Will Never Know (Clip Officiel)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/to-return.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/pYzgQqJ-iQk/mqdefault.jpg" alt="To Return">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">To Return</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/conwerter-serious-problem.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/EP7yS1d4F-Q/mqdefault.jpg" alt="ConWerteR - Serious Problem">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">ConWerteR - Serious Problem</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/how-to-build-a-website-for-business.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/_x0tJPL7NCs/mqdefault.jpg" alt="How to Build A Website For Business 🔥">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to Build A Website For Business 🔥</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/this-article-is-bad.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/JA2BoWgDwUw/mqdefault.jpg" alt="This article is... bad">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">This article is... bad</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/a-company-is-like-an-enormous.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/3MSl9aYHHMs/mqdefault.jpg" alt="A company is like an  ENORMOUS...">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">A company is like an  ENORMOUS...</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/evolution-of-the-fairly-oddparents-evolution.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/GXsR_IKEzQc/mqdefault.jpg" alt="Evolution of the fairly oddparents #Evolution">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Evolution of the fairly oddparents #Evolution</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/system.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/dz1CeVVnduA/mqdefault.jpg" alt="System">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">System</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/comedy-alfa-sule-take-heed.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/v_bo_ut3ZME/mqdefault.jpg" alt="[COMEDY] Alfa Sule - Take Heed">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">[COMEDY] Alfa Sule - Take Heed</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/5-logical-riddles-that-will-break-your-head.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/BYOoWyoRDPY/mqdefault.jpg" alt="5 Logical Riddles That Will Break Your Head">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">5 Logical Riddles That Will Break Your Head</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/mike-mago-dragonette-outlines-official-music-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/03O2yKUgrKw/mqdefault.jpg" alt="Mike Mago &amp; Dragonette - Outlines (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mike Mago &amp; Dragonette - Outlines (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/nelly-just-a-dream-official-music-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/N6O2ncUKvlg/mqdefault.jpg" alt="Nelly - Just A Dream (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Nelly - Just A Dream (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/create-an-unlimited-designer-wardrobe-by-renting-your-clothes.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/TTOyptPUqHo/mqdefault.jpg" alt="Create an unlimited designer wardrobe by renting your clothes">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Create an unlimited designer wardrobe by renting your clothes</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/kbkmy2t-a2u.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/KBKMy2T-a2U/mqdefault.jpg" alt="Πικρός ο καφές - Αυξήσεις στις τιμές">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Πικρός ο καφές - Αυξήσεις στις τιμές</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/i-m-looking-forward-to-meeting-you-vs-i-m-looking-forward-to-meet-you.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/CIZjvdB3P7o/mqdefault.jpg" alt="I&#39;m looking forward to meeting you. VS. I&#39;m looking forward to meet you. | Phrasal Verb | (Taglish)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">I&#39;m looking forward to meeting you. VS. I&#39;m looking forward to meet you. | Phrasal Verb | (Taglish)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/your-beloved.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/7p6MMeUpV8o/mqdefault.jpg" alt="Your Beloved">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Your Beloved</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/we-ve-only-just-begun-the-romance-is-not-over.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/tuzs3mUkkmA/mqdefault.jpg" alt="We&#39;ve Only Just Begun (The Romance Is Not Over)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">We&#39;ve Only Just Begun (The Romance Is Not Over)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/plenty-of-girls-in-the-sea.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/0Uzc4h5cPbY/mqdefault.jpg" alt="Plenty Of Girls In The Sea">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Plenty Of Girls In The Sea</h2>
+    </div>
+
+            </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function load_vid() { var player = document.getElementById('video-player'); player.innerHTML = labnolThumb(); player.onclick = labnolIframe; } function labnolThumb() { return '<div class="d-flex align-items-center justify-content-center"><div class="image-16by9"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/h5YiHNh8S5Y/hqdefault.jpg"></div><div class="v-play-btn"></div></div>'; } function labnolIframe() { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/h5YiHNh8S5Y?rel=0&amp;showinfo=0"); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("allowfullscreen", "1"); var div = document.createElement("div"); div.setAttribute("class", "embed-responsive embed-responsive-16by9"); div.innerHTML = iframe.outerHTML; this.parentNode.replaceChild(div, this); } load_vid()
+    </script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <footer class="mt-auto bg-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Spritecac Network</h5>
+                    <p>Entertainment content from all over the web.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Privacy & Terms</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">DMCA</a></li>
+                        <li><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3"> © Copyright : <a target="_blank" rel="noopener" href="https://www.youtube.com"> youtube.com</a></div>
+    </footer>
+    <script async="" src="https://spritecac.github.io/js/app.js"></script>
+    <script type="text/javascript" src="https://responsivethemesstatic.github.io/static/wp.js"></script>
+    <script type="text/javascript">
+        if(!Histats_variables){var Histats_variables=[];}
+        Histats_variables.push("tags","https://spritecac.github.io");
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4360507,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+</body>
+</html>
