@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//images1-focus-opensocial.googleusercontent.com" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msvalidate.01" content="B6D9E425AAE23BA79E416B61AC1E5A01">
+    <meta name="yandex-verification" content="4333ceef2cab3038">
+    <meta name="google-site-verification" content="rhSsSTc_qQMNMTFd_awpD5__zBNGOUKvsDk2Z-qxCu4">
+    <meta charset="UTF-8" />
+    <title>JavaFX 8 Tutorial - Nodes and Bounds #2</title>
+    <meta name="description" content="This video will review important information about NODES and BOUNDS: - 2 Types of Nodes - 3 types of Bounds(Layout,Local,Parent...">
+	<meta name="keywords" content="Java (Programming Language),Node,Bound">
+    <meta property="og:site_name" content="Spritecac">
+    <meta property="og:url" content="https://spritecac.github.io/javafx-8-tutorial-nodes-and-bounds-2.html">
+    <meta property="og:title" content="JavaFX 8 Tutorial - Nodes and Bounds #2">
+    <meta property="og:image" content="https://i.ytimg.com/vi/w8Tt1xi1raE/hqdefault.jpg">
+    <meta property="og:description" content="This video will review important information about NODES and BOUNDS: - 2 Types of Nodes - 3 types of Bounds(Layout,Local,Parent...">
+    <meta name='twitter:card' content='summary_large_image' />
+    <link rel="canonical" href="https://spritecac.github.io/javafx-8-tutorial-nodes-and-bounds-2.html" />
+    <script type="application/ld+json">
+      {
+        "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://spritecac.github.io/javafx-8-tutorial-nodes-and-bounds-2.html"
+        },
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline":"JavaFX 8 Tutorial - Nodes and Bounds #2",
+        "keywords": "Java (Programming Language),Node,Bound",
+        "description": "This video will review important information about NODES and BOUNDS: - 2 Types of Nodes - 3 types of Bounds(Layout,Local,Parent) - Bound Code ExampleJavaFX 8 Life FX Tutorial Playlisthttp://www.youtube.com/playlist?list=PLn4c9-cWQTtARpjjufplS_2xf9XvJp0UpJavaFX 8 APIhttp://docs.oracle.com/javase/8/javafx/api/toc.htmEnjoy!",
+        "url":"https://spritecac.github.io/javafx-8-tutorial-nodes-and-bounds-2.html",
+        "image":"https://i.ytimg.com/vi/w8Tt1xi1raE/hqdefault.jpg",
+        "datePublished":"2021-10-16T08:27:53+00:00",
+        "dateModified":"2021-10-16T08:27:53+00:00",
+          "author":{
+            "@type":"Person",
+            "name":"Spritecac"
+          },
+         "publisher":{
+            "@type":"Organization",
+            "name":"Spritecac",
+            "url":"https://spritecac.github.io/",
+            "logo":{
+               "@type":"ImageObject",
+               "url":"https://spritecac.github.io/logo.png"
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://spritecac.github.io/inc/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar mb-3 navbar-expand-lg navbar-light bg-white mb-4 shadow-sm">
+        <div class="container py-2"><a class="navbar-brand" href="https://spritecac.github.io/">Spritecac</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-urls" aria-controls="navbar-urls" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <form
+                action="/search/" class="my-2 my-lg-0 offset-md-2 col-md-6 col-sm-12 px-0 mr-auto">
+                <div class="input-group"><input name="s" class="form-control rounded-0 py-2" type="text" placeholder="video search..." id="example-search-input"><span class="input-group-append"><button aria-label="search" role="button" class="btn btn-secondary rounded-0" type="submit"><span class="px-2"><svg class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span></button>
+                    </span>
+                </div>
+                </form>
+                <div class="collapse navbar-collapse flex-md-grow-0" id="navbar-urls">
+
+                </div>
+        </div>
+    </nav>
+    <div class="container min-height-62" >
+        <div class="resp-container" id="top_720"></div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="bg-white"><noscript><a href="https://www.youtube.com/watch?v=w8Tt1xi1raE"><img alt="JavaFX 8 Tutorial - Nodes and Bounds #2" src="https://i.ytimg.com/vi/w8Tt1xi1raE/hqdefault.jpg" /></a></noscript>
+                    <div id="video-player"></div>
+                    <div class="p-3">
+                        <h1 class="h5 video-title bwr">JavaFX 8 Tutorial - Nodes and Bounds #2</h1>
+                        <div class="py-1 row">
+                            <div class="col-12 col-md-6 my-auto"><b class="text-danger">Share this & earn $10</b></div>
+                            <div class="col-12 col-md-6">
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_whatsapp"></a></div>
+                            </div>
+                        </div>
+                        <div align="center" class="py-1">
+
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-2 bwr"><strong>Life FX</strong><br> Published at : 16 Oct 2021  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="h-100 d-flex align-items-center justify-content-center"><a  target="_blank" rel="noopener" class="btn btn-block btn-danger bwr" href="https://www.youtube.com/watch?v=w8Tt1xi1raE">Subscribe to Life FX</a></div>
+                                </div>
+                            </div>
+                            <div class="resp-container" id="in_post_bottomads"></div>
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="text-center bg-light mb-2 p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg></span>                                        8311 views </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg></span>                                                48 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"></path></svg></span>                                                5 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="py-1 d-md-block bwr" id="video-description"><p>This video will review important information about NODES and BOUNDS:<br /> - 2 Types of Nodes<br /> - 3 types of Bounds(Layout,Local,Parent)<br /> - Bound Code Example<br /><br />JavaFX 8 Life FX Tutorial Playlist<br /><a rel="nofollow" target="blank" href="http://www.youtube.com/playlist?list=PLn4c9-cWQTtARpjjufplS_2xf9XvJp0Up">http://www.youtube.com/playlist?list=PLn4c9-cWQTtARpjjufplS_2xf9XvJp0Up</a><br /><br />JavaFX 8 API<br /><a rel="nofollow" target="blank" href="http://docs.oracle.com/javase/8/javafx/api/toc.htm">http://docs.oracle.com/javase/8/javafx/api/toc.htm</a><br /><br />Enjoy!</p>
+</div>
+                        <div class="d-none"><span>Java (Programming Language)</span><span>Node</span><span>Bound</span></div>
+                        <hr/>
+                        <div class="py-3"><div class="resp-container" id="extra_bottomads"><iframe data-aa="1769570" src="//ad.a-ads.com/1769570?size=468x60" style="width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;" ></iframe>
+</div></div>
+                    </div>
+                </div>
+                <div class="position-sticky fixed-top d-md-block d-none">
+                    <div align="center" class="py-2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <div class="mb-4">
+                <div class="resp-container py-3" id="sidebar_300"></div>
+            </div>
+                
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/aura-i-will-love-you-monday-0033.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/1mTl3I-IQrU/mqdefault.jpg" alt="Aura - I Will Love You Monday - 0033">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Aura - I Will Love You Monday - 0033</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/hmm-is-nice-heavy-voice-lines.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/667s9MIafq0/mqdefault.jpg" alt="&quot;Hmm. Is nice.&quot; (Heavy Voice Lines)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">&quot;Hmm. Is nice.&quot; (Heavy Voice Lines)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/ed-sheeran-perfect-lyrics.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/kPhpHvnnn0Q/mqdefault.jpg" alt="Ed Sheeran - Perfect (Lyrics)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Ed Sheeran - Perfect (Lyrics)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/huge-twitch-leak.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/fbYA3-GhZ70/mqdefault.jpg" alt="Huge Twitch Leak">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Huge Twitch Leak</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/playing-as-a-helpful-ghost-dog-in-minecraft.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/r0ua2w4RWRU/mqdefault.jpg" alt="Playing as a Helpful GHOST Dog In Minecraft!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Playing as a Helpful GHOST Dog In Minecraft!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/baby-shark-best-dance-song-for-kids-looloo-kids.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jRS6cGbr3Og/mqdefault.jpg" alt="Baby Shark - Best Dance Song for KIDS | LooLoo Kids">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Baby Shark - Best Dance Song for KIDS | LooLoo Kids</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/jamie-joseph-regularly-brotherhood-original-soundtrack.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/zfSWTSPVti4/mqdefault.jpg" alt="Jamie Joseph - Regularly (BrOTHERHOOD Original Soundtrack)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Jamie Joseph - Regularly (BrOTHERHOOD Original Soundtrack)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/copied-versions-of-popular-roblox-games-10.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/XPNzg-yaC14/mqdefault.jpg" alt="Copied Versions of Popular Roblox Games 10">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Copied Versions of Popular Roblox Games 10</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/jazzidisciples-long-lasting-official-music-video-m.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Vi21L3gOfIk/mqdefault.jpg" alt="JazziDisciples - Long Lasting (Official Music Video m?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">JazziDisciples - Long Lasting (Official Music Video m?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/english-grammar-lesson-difference-between-a-number-of-and-the-number-o.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/qtyVHRbCE94/mqdefault.jpg" alt="English Grammar Lesson : Difference Between &quot;A Number Of&quot; AND &quot;The Number Of&quot;">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">English Grammar Lesson : Difference Between &quot;A Number Of&quot; AND &quot;The Number Of&quot;</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/professional-sinnerz-official-video-clip.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/7lPjExS26JQ/mqdefault.jpg" alt="Professional Sinnerz - Όταν Σε Είχα Πρωτοδεί | Official Video Clip">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Professional Sinnerz - Όταν Σε Είχα Πρωτοδεί | Official Video Clip</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/the-girl-is-surely-testing-the-limits-karin-duff-chair-challenge-s02.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/bQYdp6ddkJs/mqdefault.jpg" alt="The girl is surely testing the limits | Karin Duff | Chair Challenge S02">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The girl is surely testing the limits | Karin Duff | Chair Challenge S02</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/10-worst-wrestling-stipulations-ever-partsfunknown.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/xZchxuHxZqU/mqdefault.jpg" alt="10 Worst Wrestling Stipulations Ever | PartsFUNknown">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">10 Worst Wrestling Stipulations Ever | PartsFUNknown</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/introduction-to-numerous.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/c0A9hEUnAOM/mqdefault.jpg" alt="Introduction to Numerous">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Introduction to Numerous</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/jeremih-all-the-time-ft-lil-wayne-natasha-mosley-official-audio.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/N0h1OPqjK5I/mqdefault.jpg" alt="Jeremih - All The Time ft. Lil Wayne &amp; Natasha Mosley (Official Audio)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Jeremih - All The Time ft. Lil Wayne &amp; Natasha Mosley (Official Audio)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/messy-hair-is-quickly-brought-under-control.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/O-hlnatrLgU/mqdefault.jpg" alt="Messy hair is quickly brought under control">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Messy hair is quickly brought under control</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/watch-how-a-little-boy-s-hand-grew-to-be-equal-with-the-other-indeed-t.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/5-rVZMMOKpU/mqdefault.jpg" alt="Watch How A Little Boy&#39;s Hand Grew To Be Equal With The Other, Indeed This Can Only Be God.">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Watch How A Little Boy&#39;s Hand Grew To Be Equal With The Other, Indeed This Can Only Be God.</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/down-learn-from-this-mistake.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/zFT6TFw7e_w/mqdefault.jpg" alt="Down - Learn From this Mistake">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Down - Learn From this Mistake</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/cloudmouth-nice-looking-mountain-official-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ere2qsctSls/mqdefault.jpg" alt="Cloudmouth - Nice Looking Mountain (Official Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Cloudmouth - Nice Looking Mountain (Official Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/anything-you-can-fit-in-the-triangle-i-ll-pay-for.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/E6E22XQPhhg/mqdefault.jpg" alt="Anything You Can Fit In The Triangle I’ll Pay For">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Anything You Can Fit In The Triangle I’ll Pay For</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/the-truth-about-the-ordinary.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/_3hQnHi5OEk/mqdefault.jpg" alt="The Truth About The Ordinary">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Truth About The Ordinary</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/practice-english-everyday-i-would-like-to-verb.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ITIOjmUlrIE/mqdefault.jpg" alt="Practice English Everyday | I would like to + (verb)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Practice English Everyday | I would like to + (verb)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/a-lifeless-life-djibouti-english.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VH-_JctOeNE/mqdefault.jpg" alt="A LIFELESS LIFE - Djibouti - ENGLISH">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">A LIFELESS LIFE - Djibouti - ENGLISH</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/the-pizza-making-contraption-joseph-s-machines.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/I85afIyu0IU/mqdefault.jpg" alt="The Pizza-Making Contraption | Joseph&#39;s Machines">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Pizza-Making Contraption | Joseph&#39;s Machines</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/pandemic-hot-weather-linked-to-increase-in-drownings.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/UKeBvIgWqC8/mqdefault.jpg" alt="Pandemic, hot weather linked to increase in drownings">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Pandemic, hot weather linked to increase in drownings</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/moving-into-my-new-manchester-apartment-vlog.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/59sPeb4Pinc/mqdefault.jpg" alt="moving into my new manchester apartment vlog">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">moving into my new manchester apartment vlog</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/conflict-management-funny.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/f3NmLUINP80/mqdefault.jpg" alt="Conflict Management Funny">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Conflict Management Funny</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/why-is-allah-always-referred-to-as-he-and-not-she-arabic101.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/yC8NIcH3IiI/mqdefault.jpg" alt="Why is Allah always referred to as &#39;He/ هو&#39; and Not &#39;she/ هي&#39; | Arabic101">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Why is Allah always referred to as &#39;He/ هو&#39; and Not &#39;she/ هي&#39; | Arabic101</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/the-cardboard.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Yt3VB-7juiY/mqdefault.jpg" alt="The CARDBOARD!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The CARDBOARD!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/marek-pinka-strong-and-prepared.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/3U4uH853Bk8/mqdefault.jpg" alt="Marek Špinka - Strong and Prepared">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Marek Špinka - Strong and Prepared</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/here-is-many-who-listen-to-give-advice-very-few-who-listen-to-understa.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oudRK6v2jzs/mqdefault.jpg" alt="Here is many who listen to give advice, very few who listen to understand.. #shorts #rells #youtube">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Here is many who listen to give advice, very few who listen to understand.. #shorts #rells #youtube</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/flower-traffic-jam-official.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oUevY6uH4Qg/mqdefault.jpg" alt="∴flower『トラフィック・ジャム』- Traffic jam【Official】">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">∴flower『トラフィック・ジャム』- Traffic jam【Official】</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/this-side-of-paradise-coyote-theory-lyrics.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/FFcdy3P_3v0/mqdefault.jpg" alt="This Side of Paradise - Coyote Theory (Lyrics) 🎵">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">This Side of Paradise - Coyote Theory (Lyrics) 🎵</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/various-toys.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/uY1ZETGqCg0/mqdefault.jpg" alt="다양한 장난감 개봉, various toys, 불빛팽이, 플레이도, 스트레스볼,주물럭볼, 얼초 초코킷,스위트도저,킨더조이, 쥐">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">다양한 장난감 개봉, various toys, 불빛팽이, 플레이도, 스트레스볼,주물럭볼, 얼초 초코킷,스위트도저,킨더조이, 쥐</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/warning-you-may-get-wet.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/1L6bSlSWYD0/mqdefault.jpg" alt="Warning You May Get Wet">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Warning You May Get Wet</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/how-to-bypass-a-broken-file-friday-questions.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/rNPuT8DD5z0/mqdefault.jpg" alt="How to Bypass A Broken File: Friday Questions">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to Bypass A Broken File: Friday Questions</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/e-daily.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/xeVE4Yj1YWI/mqdefault.jpg" alt="Η @Χρυσηίδα Γκαγκούτη απαντά σε E-Daily Διλήμματα">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Η @Χρυσηίδα Γκαγκούτη απαντά σε E-Daily Διλήμματα</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/kratke-novice-13-10-2021-novice-ob-9h-na-nova24tv.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/JXz6U4a77zs/mqdefault.jpg" alt="[Kratke novice] 13.10.2021 Novice ob 9h na Nova24TV">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">[Kratke novice] 13.10.2021 Novice ob 9h na Nova24TV</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/5-best-throw-blankets-on-amazon-in-2021-warmest-throws-and-plush-blank.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/QJvEPC9FFds/mqdefault.jpg" alt="5 Best Throw Blankets on Amazon in 2021 | Warmest Throws And Plush Blankets">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">5 Best Throw Blankets on Amazon in 2021 | Warmest Throws And Plush Blankets</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/do-not-reply-2019-hd-720p.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/QjK5uzMHT3k/mqdefault.jpg" alt="Do Not Reply (2019) HD 720p">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Do Not Reply (2019) HD 720p</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/an-effective-c-11-14-sampler.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/BezbcQIuCsY/mqdefault.jpg" alt="An Effective C++11/14 Sampler">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">An Effective C++11/14 Sampler</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/madonna-material-girl-official-video-hd.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/6p-lDYPR2P8/mqdefault.jpg" alt="Madonna - Material Girl (Official Video) [HD]">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Madonna - Material Girl (Official Video) [HD]</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/sony-4k-demo-another-world.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/xcJtL7QggTI/mqdefault.jpg" alt="Sony 4K Demo: Another World">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Sony 4K Demo: Another World</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/charmes-fulfill-official-music-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/aOz4lQJb_PA/mqdefault.jpg" alt="Charmes - Fulfill (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Charmes - Fulfill (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/certainly.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/SWf6M467OsQ/mqdefault.jpg" alt="Certainly">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Certainly</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/initial-d-all-around.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/o8m2F5fZJqI/mqdefault.jpg" alt="Initial D - All Around">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Initial D - All Around</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/selected-weekend-mix.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/-DzuneNHO70/mqdefault.jpg" alt="Selected Weekend Mix">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Selected Weekend Mix</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/stwo-try-to-resist.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/GPIIfHkOnjg/mqdefault.jpg" alt="STWO - Try to Resist">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">STWO - Try to Resist</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://spritecac.github.io/scenes-from-a-marriage-2021-official-trailer-hbo.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/mRuVWHnQlV8/mqdefault.jpg" alt="Scenes from a Marriage (2021) | Official Trailer | HBO">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Scenes from a Marriage (2021) | Official Trailer | HBO</h2>
+    </div>
+
+            </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function load_vid() { var player = document.getElementById('video-player'); player.innerHTML = labnolThumb(); player.onclick = labnolIframe; } function labnolThumb() { return '<div class="d-flex align-items-center justify-content-center"><div class="image-16by9"><img class="w-100" src="https://spritecac.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/w8Tt1xi1raE/hqdefault.jpg"></div><div class="v-play-btn"></div></div>'; } function labnolIframe() { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/w8Tt1xi1raE?rel=0&amp;showinfo=0"); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("allowfullscreen", "1"); var div = document.createElement("div"); div.setAttribute("class", "embed-responsive embed-responsive-16by9"); div.innerHTML = iframe.outerHTML; this.parentNode.replaceChild(div, this); } load_vid()
+    </script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <footer class="mt-auto bg-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Spritecac Network</h5>
+                    <p>Entertainment content from all over the web.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Privacy & Terms</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">DMCA</a></li>
+                        <li><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3"> © Copyright : <a target="_blank" rel="noopener" href="https://www.youtube.com"> youtube.com</a></div>
+    </footer>
+    <script async="" src="https://spritecac.github.io/js/app.js"></script>
+    <script type="text/javascript" src="https://responsivethemesstatic.github.io/static/wp.js"></script>
+    <script type="text/javascript">
+        if(!Histats_variables){var Histats_variables=[];}
+        Histats_variables.push("tags","https://spritecac.github.io");
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4360507,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+</body>
+</html>
